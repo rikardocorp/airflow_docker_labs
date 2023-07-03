@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+
+  local_mysql:
+    image: mysql:5.7
+    volumes:
+      - ./mysql_container/mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    expose:
+      - '3306'
+    environment:
+      MYSQL_DATABASE: 'mysql_db'
+      MYSQL_USER: 'mysql'
+      MYSQL_PASSWORD: 'mysql'
+      MYSQL_ROOT_PASSWORD: 'root_mysql'
+
+  local_postgres:
+    image: 'postgres:13.2'
+    volumes:
+      - ./postgresql_container/postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: postgres # The PostgreSQL user
+      POSTGRES_PASSWORD: postgres # The PostgreSQL password 
+      POSTGRES_DB: postgres_db # The PostgreSQL default database 
