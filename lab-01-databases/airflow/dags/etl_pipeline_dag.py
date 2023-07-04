@@ -25,7 +25,7 @@ DAG_ID = 'mysql_to_postgresql'
 DIR_ARTIFACT = 'artifacts'
 
 default_args = {
-    'owner': 'data',
+    'owner': 'datapath',
     'start_date': airflow.utils.dates.days_ago(7),
     'depends_on_past': False,
     'retries': 1,
